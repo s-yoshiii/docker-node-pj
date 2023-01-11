@@ -1,4 +1,5 @@
 import p5 from "p5";
+import "reset-css";
 let x = 0;
 const sketch = (p) => {
   p.setup = () => {
