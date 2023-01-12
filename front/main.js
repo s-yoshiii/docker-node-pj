@@ -4,7 +4,7 @@ let x = 0;
 const sketch = (p) => {
   p.setup = () => {
     //最初に１回だけ実行される処理
-    p.createCanvas(p.windowWidth, p.windowHeight);
+    p.createCanvas(480, 240);
     p.background("skyblue");
 
     p.fill(255, 0, 0, 127);
@@ -26,4 +26,26 @@ const sketch = (p) => {
   // };
 };
 
+let r = 50;
+const mouseDraw = (p) => {
+  p.setup = () => {
+    p.createCanvas(480, 240);
+  };
+  p.mousePressed = () => {
+    r += 10;
+    return false;
+  };
+  p.draw = () => {
+    p.noStroke();
+    p.background("skyblue");
+    if (p.mouseIsPressed) {
+      p.fill("pink");
+    } else {
+      p.fill("white");
+    }
+    p.ellipse(p.mouseX, p.mouseY, r, r);
+  };
+};
+
 new p5(sketch);
+new p5(mouseDraw);
