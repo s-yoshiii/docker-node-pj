@@ -45,6 +45,17 @@ const mouseDraw = (p) => {
     }
     p.ellipse(p.mouseX, p.mouseY, r, r);
   };
+  p.keyTyped = () => {
+    if (p.key === "u") {
+      r += 10;
+    }
+    return false;
+  };
+  p.keyPressed = () => {
+    if (p.keyCode === p.DOWN_ARROW) {
+      r -= 10;
+    }
+  };
 };
 
 new p5(sketch);
