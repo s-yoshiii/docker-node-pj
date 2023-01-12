@@ -95,8 +95,8 @@ const angleDraw = (p) => {
   p.draw = () => {
     p.push();
     p.translate(p.width / 2, p.height / 2);
-    x = p.sin(p.radians(angle)) * r;
-    y = p.cos(p.radians(angle)) * r;
+    x = p.cos(p.radians(angle)) * r;
+    y = p.sin(p.radians(angle)) * r;
     p.ellipse(x, y, 10, 10);
     p.pop();
     angle += 2;
