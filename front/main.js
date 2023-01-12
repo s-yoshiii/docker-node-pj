@@ -59,7 +59,7 @@ const mouseDraw = (p) => {
 };
 
 const randomDraw = (p) => {
-  let x, y;
+  let x, y, z;
   p.setup = () => {
     p.createCanvas(480, 240);
     p.noStroke();
@@ -69,12 +69,15 @@ const randomDraw = (p) => {
     x = p.random(p.width);
     y = p.random(p.height);
     if (p.random() > 0.9) {
-      r = p.random(50, 80);
+      z = p.random(50, 80);
     } else {
-      r = p.random(10, 30);
+      z = p.random(10, 30);
     }
     p.fill(255, 255, 255, p.random(30, 250));
-    p.ellipse(x, y, r, r);
+    p.ellipse(x, y, z, z);
+    if (p.frameCount > 200) {
+      p.noLoop();
+    }
   };
 };
 
