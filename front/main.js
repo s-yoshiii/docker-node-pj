@@ -58,5 +58,26 @@ const mouseDraw = (p) => {
   };
 };
 
+const randomDraw = (p) => {
+  let x, y;
+  p.setup = () => {
+    p.createCanvas(480, 240);
+    p.noStroke();
+    p.background("skyblue");
+  };
+  p.draw = () => {
+    x = p.random(p.width);
+    y = p.random(p.height);
+    if (p.random() > 0.9) {
+      r = p.random(50, 80);
+    } else {
+      r = p.random(10, 30);
+    }
+    p.fill(255, 255, 255, p.random(30, 250));
+    p.ellipse(x, y, r, r);
+  };
+};
+
 new p5(sketch);
 new p5(mouseDraw);
+new p5(randomDraw);
