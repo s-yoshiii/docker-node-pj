@@ -81,6 +81,38 @@ const randomDraw = (p) => {
   };
 };
 
+const angleDraw = (p) => {
+  let angle = 0,
+    x = 0,
+    y = 0,
+    r = 50,
+    isDraw = true;
+  p.setup = () => {
+    p.createCanvas(480, 240);
+    p.background("skyblue");
+    p.noStroke();
+  };
+  p.draw = () => {
+    p.push();
+    p.translate(p.width / 2, p.height / 2);
+    x = p.sin(p.radians(angle)) * r;
+    y = p.cos(p.radians(angle)) * r;
+    p.ellipse(x, y, 10, 10);
+    p.pop();
+    angle += 2;
+    r += 0.1;
+  };
+  p.mousePressed = () => {
+    if (isDraw) {
+      p.noLoop();
+    } else {
+      p.loop();
+    }
+    isDraw = !isDraw;
+  };
+};
+
 new p5(sketch);
 new p5(mouseDraw);
 new p5(randomDraw);
+new p5(angleDraw);
