@@ -4,32 +4,26 @@ let x = 0;
 const sketch = (p) => {
   p.setup = () => {
     //最初に１回だけ実行される処理
-    p.createCanvas(480, 240);
+    let canvas = p.createCanvas(480, 240);
+    canvas.parent("sketch");
     p.background("skyblue");
 
     p.fill(255, 0, 0, 127);
     p.rect(0, 0, 100, 100);
 
     p.push();
-    // p.translate(10, 10);
-    // p.rotate(p.PI / 4);
-    // p.rotate(p.radians(30));
     p.scale(2, 0.5);
     p.fill(0, 0, 255, 127);
     p.rect(0, 0, 100, 100);
     p.pop();
   };
-  // p.draw = () => {
-  //   //そのあと繰り返し実行される処理
-  //   p.rect(x, 40, 50, 50);
-  //   x++;
-  // };
 };
 
-let r = 50;
 const mouseDraw = (p) => {
+  let r = 50;
   p.setup = () => {
-    p.createCanvas(480, 240);
+    let canvas = p.createCanvas(480, 240);
+    canvas.parent("mouseDraw");
   };
   p.mousePressed = () => {
     r += 10;
@@ -61,7 +55,8 @@ const mouseDraw = (p) => {
 const randomDraw = (p) => {
   let x, y, z;
   p.setup = () => {
-    p.createCanvas(480, 240);
+    let canvas = p.createCanvas(480, 240);
+    canvas.parent("randomDraw");
     p.noStroke();
     p.background("skyblue");
   };
@@ -86,11 +81,24 @@ const angleDraw = (p) => {
     x = 0,
     y = 0,
     r = 50,
+    button,
     isDraw = true;
   p.setup = () => {
-    p.createCanvas(480, 240);
+    let canvas = p.createCanvas(480, 240);
+    canvas.parent("angleDraw");
     p.background("skyblue");
     p.noStroke();
+    button = p.createButton("Stop");
+    button.position(10, 10);
+    button.parent("angleDraw");
+    button.mousePressed(() => {
+      if (isDraw) {
+        p.noLoop();
+      } else {
+        p.loop();
+      }
+      isDraw = !isDraw;
+    });
   };
   p.draw = () => {
     p.push();
@@ -101,14 +109,6 @@ const angleDraw = (p) => {
     p.pop();
     angle += 2;
     r += 0.1;
-  };
-  p.mousePressed = () => {
-    if (isDraw) {
-      p.noLoop();
-    } else {
-      p.loop();
-    }
-    isDraw = !isDraw;
   };
 };
 
