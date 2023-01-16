@@ -11,15 +11,11 @@ const sketch = (p) => {
     p.fill(255);
 
     const size = 5;
-    p.ellipse(50, 50, size, size);
-    p.ellipse(100, 50, size, size);
-    p.ellipse(150, 50, size, size);
-    p.ellipse(50, 100, size, size);
-    p.ellipse(100, 100, size, size);
-    p.ellipse(150, 100, size, size);
-    p.ellipse(50, 150, size, size);
-    p.ellipse(100, 150, size, size);
-    p.ellipse(150, 150, size, size);
+    for (let x = 50; x <= 150; x += 50) {
+      for (let y = 50; y <= 150; y += 50) {
+        p.ellipse(x, y, size, size);
+      }
+    }
   };
 };
 new p5(sketch);
