@@ -11,13 +11,14 @@ const sketch = (p) => {
     p.fill(255);
 
     const step = 20;
+    p.colorMode(p.HSB, 360, 100, 100);
     for (let x = 0; x <= p.width; x += step) {
       for (let y = 0; y <= p.height; y += step) {
         const size = p.random(0, 15);
-        const r = p.random(255);
-        const g = p.random(r);
-        const b = p.random(g);
-        p.fill(r, g, b);
+        const h = p.random(200, 320);
+        const s = 100;
+        const b = size * 5;
+        p.fill(h, s, b);
         p.ellipse(x, y, size, size);
       }
     }
