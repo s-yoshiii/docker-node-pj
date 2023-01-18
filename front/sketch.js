@@ -13,13 +13,11 @@ const sketch = (p) => {
     const step = 20;
     for (let x = 0; x <= p.width; x += step) {
       for (let y = 0; y <= p.height; y += step) {
-        // const size = p.random(0, 15);
-        let size;
-        if (p.random() < 0.95) {
-          size = p.random(0, 10);
-        } else {
-          size = step;
-        }
+        const size = p.random(0, 15);
+        const r = p.random(255);
+        const g = p.random(r);
+        const b = p.random(g);
+        p.fill(r, g, b);
         p.ellipse(x, y, size, size);
       }
     }
