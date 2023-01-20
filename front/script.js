@@ -1,11 +1,15 @@
 "use strict";
 {
-  const target = document.querySelector("img");
-  const motion = () => {
-    console.log("fired!");
+  const target = document.querySelector(".js-fade-in");
+  const motion = (entries) => {
+    if (!entries[0].isIntersecting) {
+      return;
+    }
+    entries[0].target.classList.add("is-visible");
   };
   const options = {
-    threshold: [0.2, 0.8],
+    threshold: 1,
+    rootMargin: "0px 0px -100px",
   };
   const observer = new IntersectionObserver(motion, options);
   observer.observe(target);
