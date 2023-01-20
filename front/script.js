@@ -4,6 +4,9 @@
   const motion = () => {
     console.log("fired!");
   };
-  const observer = new IntersectionObserver(motion);
+  const options = {
+    threshold: [0.2, 0.8],
+  };
+  const observer = new IntersectionObserver(motion, options);
   observer.observe(target);
 }
