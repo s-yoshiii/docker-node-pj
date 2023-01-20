@@ -1,0 +1,129 @@
+html {
+    width: 100%;
+    font-size: 62.5%;
+}
+
+html,
+body {
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -ms-touch-action: manipulation;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    font-size: 16px;
+    height: auto;
+    min-height: 100vh;
+    font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3,
+        游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial,
+        sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #000;
+    letter-spacing: 0.0005em;
+    word-break: break-all;
+    background-color: #fff;
+    -webkit-text-orientation: sideways;
+    text-orientation: sideways;
+}
+
+main {
+    display: block;
+}
+
+* {
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+nav ul {
+    list-style: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    user-drag: none;
+    user-select: none;
+}
+
+input,
+button,
+textarea,
+select {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+label {
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="month"]::-webkit-outer-spin-button,
+input[type="month"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-outer-spin-button,
+input[type="datetime-local"]::-webkit-inner-spin-button,
+input[type="week"]::-webkit-outer-spin-button,
+input[type="week"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-outer-spin-button,
+input[type="time"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button,
+input[type="date"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* スピンボタン非表示(firefox) */
+input[type="number"],
+input[type="month"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="time"],
+input[type="date"] {
+    -moz-appearance: textfield;
+}
+
+/* クリアボタン非表示 */
+input[type="date"]::-webkit-clear-button,
+input[type="month"]::-webkit-clear-button,
+input[type="datetime-local"]::-webkit-clear-button,
+input[type="time"]::-webkit-clear-button,
+input[type="week"]::-webkit-clear-button {
+    -webkit-appearance: none;
+}
